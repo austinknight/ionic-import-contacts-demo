@@ -1,8 +1,3 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
 angular.module('contactsApp', ['ionic', 'ngCordova'])
 
 .run(function($ionicPlatform) {
@@ -18,29 +13,22 @@ angular.module('contactsApp', ['ionic', 'ngCordova'])
   });
 })
 
-.controller('contactsCtrl', function($scope, $cordovaContacts, $timeout){
+.controller('contactsCtrl', function($scope, $cordovaContacts){
   $scope.getContacts = function() {
     $scope.phoneContacts = [];
 
     function onSuccess(contacts) {
-      console.log(contacts)
-      $timeout(function() {
-        for (var i = 0; i < contacts.length; i++) {
-          var contact = contacts[i];
-          $scope.phoneContacts.push(contact);
-        }
-
-      }, 0);
+      for (var i = 0; i < contacts.length; i++) {
+        var contact = contacts[i];
+        $scope.phoneContacts.push(contact);
+      }
     };
 
     function onError(contactError) {
-      $timeout(function() {
-        alert(contactError);
-      }, 0);
+      alert(contactError);
     };
 
     var options = {};
-    options.filter = "";
     options.multiple = true;
 
     $cordovaContacts.find(options).then(onSuccess, onError);
