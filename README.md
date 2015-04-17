@@ -5,9 +5,8 @@ Just a place to save a demo of how to import contacts into an ionic application 
 # Developing
 
 ## Initial setup
-
-    git clone git@github.com:austinknight/ionic-import-contacts-demo.git
-    sudo npm install -g ionic (if you don't already have ionic)
+    
+    sudo npm install -g ionic cordova (if you don't already have ionic)
     npm install
     bower install
 
