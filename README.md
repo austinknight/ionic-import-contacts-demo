@@ -4,18 +4,29 @@ Just a place to save a demo of how to import contacts into an ionic application 
 
 # Developing
 
-    Initial setup
+## Initial setup
 
-    > git clone git@github.com:austinknight/ionic-import-contacts-demo.git
-    > sudo npm install -g ionic (if you don't already have ionic)
-    > npm install
-    > bower install
+    git clone git@github.com:austinknight/ionic-import-contacts-demo.git
+    sudo npm install -g ionic (if you don't already have ionic)
+    npm install
+    bower install
+
+*Add platform*
+    
+    ionic platform add ios
+
+*Run the app*
+
+    ionic run ios
+OR
+
+    ionic emulate ios
+
+*Live reloading and logs enabled*
+    
+    ionic run ios --livereload --consolelogs --serverlogs
 
 
-    Compile changes before emulating
+*Run a web server version of the app (contacts won't work on web though)*
 
-    > ionic build ios
-
-    Run a web server version of the app (contacts won't work on web though)
-
-    > ionic serve
+    ionic serve
